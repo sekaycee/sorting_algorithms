@@ -1,14 +1,14 @@
-# Sorting algorithms
+# Sorting Algorithms
 
-Project completed during **Fullstack Software Engineering** program at **ALX**. It aims to learn about sorting algorithms (bubble sort, insertion sort, selection sort, quick sort and so on) and Big O Notation in **C language**.
+Project completed during **Fullstack Software Engineering** program at **ALX**. It aims to showcase sorting algorithms (bubble sort, insertion sort, selection sort, quick sort and so on) and Big O Notation in **C language**.
 
 ## Technologies
 * Scripts written in Bash
 * C files are compiled using GCC
-* Tested on Ubuntu
+* Tested on Ubuntu and Windows 11
 
 ## Files
-All of the following programs are written in C:
+All the following programs were written in C:
 
 | Filename | Description |
 | -------- | ----------- |
@@ -38,4 +38,4 @@ All of the following programs are written in C:
 ## Authors
 Kay Cee - [sekaycee](https://github.com/sekaycee)
 
-Donald Ajaps
+[Donald Ajaps](https://github.com/adobki)
