@@ -1,7 +1,8 @@
 #include "sort.h"
 
 /**
- * swap_nums - swap numbers
+ * swap_nums - Swap numbers
+ *
  * @arr: input array
  * @root: the root of the heap
  * @end: the last index of the heap
@@ -32,7 +33,8 @@ void swap_nums(int *arr, size_t root, size_t end, size_t size)
 }
 
 /**
- * make_heap - build the max heap tree recursively
+ * make_heap - Build the max heap tree recursively
+ *
  * @arr: input array
  * @size: size of the array
  */
@@ -49,8 +51,9 @@ void make_heap(int *arr, size_t size)
 }
 
 /**
- * heap_sort - sorts an array of integers in ascending
- * order using the Heap sort algorithm
+ * heap_sort - Sorts an array of integers in ascending
+ *             order using the Heap sort algorithm
+ *
  * @array: input array
  * @size: size of the array
  */
