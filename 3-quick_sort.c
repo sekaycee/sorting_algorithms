@@ -14,12 +14,13 @@ void q_sort(int *arr, int start, int end, int size)
 
 	if (start < end)
 	{
-		p = end;
-		j = start;
+		p = array[end];
+		j = start - 1;
 		for (i = start; i < end; i++)
 		{
-			if (arr[i] < arr[p])
+			if (array[i] < p)
 			{
+				j++;
 				if (i != j)
 				{
 					tmp = arr[i];
@@ -27,24 +28,23 @@ void q_sort(int *arr, int start, int end, int size)
 					arr[j] = tmp;
 					print_array(arr, size);
 				}
-				j++;
 			}
 		}
-		if (j != p && arr[j] != arr[p])
+		if (arr[end] < arr[j + 1])
 		{
-			tmp = arr[j];
-			arr[j] = arr[p];
-			arr[p] = tmp;
+			tmp = arr[j + 1];
+			arr[j + 1] = array[end];
+			arr[end] = tmp;
 			print_array(arr, size);
 		}
-		q_sort(arr, start, j - 1, size);
-		q_sort(arr, j + 1, end, size);
+		q_sort(arr, start, j, size);
+		q_sort(arr, j + 2, end, size);
 	}
 }
 
 /**
  * quick_sort - sort an array of integers in ascending order
- * using the quick sort algorithm
+ * using the quick sort algorithm and lomuto partition scheme
  * @array: input arrray
  * @size: size of the array
  */
