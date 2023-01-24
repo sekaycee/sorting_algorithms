@@ -2,6 +2,7 @@
 
 /**
  * s_sort - helper function for shell_sort function
+ *
  * @a: input arrray
  * @size: size of the array
  * @n: interval
@@ -24,8 +25,10 @@ void s_sort(int *a, int size, int n)
 	}
 	print_array(a, size);
 }
+
 /**
  * shell_sort - sort an array of integers in ascending order
+ *
  * using the Shell sort algorithm
  * @array: array to sort
  * @size: size of the array to sort
