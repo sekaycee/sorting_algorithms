@@ -1,11 +1,11 @@
 #include "sort.h"
 
 /**
- * radix_sort - sort an array of integers in ascending
+ * radix_sort - Sort an array of integers in ascending
  *              order using the Radix sort algorithm
  *
  * @array: input array
- * @size: size of the array
+ * @size: size of input array
  */
 void radix_sort(int *array, size_t size)
 {
