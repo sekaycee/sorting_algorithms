@@ -1,7 +1,7 @@
 #include "deck.h"
 
 /**
- * get_val - get the relative value of a card from it's string value
+ * get_val - Get the relative value of a card from it's string value
  *
  * @str: string value of the card
  * Return: relative value of the card (0 through 12)
@@ -19,7 +19,7 @@ int get_val(const char *str)
 }
 
 /**
- * swap_node - swap a node with the next node in the list
+ * swap_node - Swap a node with the next node in the list
  *
  * @list: double pointer to the beginning of the list
  * @node: node to swap
@@ -40,7 +40,7 @@ void swap_node(deck_node_t **list, deck_node_t *node)
 }
 
 /**
- * sort_deck - sort a linked list deck of cards
+ * sort_deck - Sort a linked list deck of cards
  *
  * @deck: double pointer to the deck to sort
  */
