@@ -1,7 +1,7 @@
 #include "sort.h"
 
 /**
- * qsort_h - recursive helper function for quick_sort_hoare
+ * qsort_h - Recursive helper function for quick_sort_hoare
  *
  * @arr: array to sort
  * @start: lowest index of the partition to sort
@@ -43,7 +43,7 @@ void qsort_h(int *arr, ssize_t start, ssize_t end, size_t size)
 }
 
 /**
- * quick_sort_hoare - sort an array of integers in ascending order
+ * quick_sort_hoare - Sort an array of integers in ascending order
  *                    using the Quick sort hoare algorithm
  *
  * @array: The array to sort
