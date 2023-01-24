@@ -1,7 +1,8 @@
 #include "sort.h"
 
 /**
- * print_data - print data
+ * print_data - Print data
+ *
  * @msg: message
  * @a: array
  * @from: from
@@ -23,7 +24,8 @@ void print_data(char *msg, int *a, int from, int to)
 }
 
 /**
- * merge - helper function for merge_sort function
+ * merge - Helper function for merge_sort function
+ *
  * @a: array
  * @start: start index
  * @middle: middle
@@ -61,7 +63,8 @@ void merge(int *a, int start, int middle, int end, int *b)
 }
 
 /**
- * msort - helper function for merge_sort function
+ * msort - Helper function for merge_sort function
+ *
  * @array: array
  * @start: start index
  * @end: end index
@@ -81,7 +84,8 @@ void msort(int *array, int start, int end, int *b)
 }
 
 /**
- * merge_sort - sort an array of integers in ascending order
+ * merge_sort - Sort an array of integers in ascending order
+ *
  * using the Merge sort algorithm
  * @array: array
  * @size: size
