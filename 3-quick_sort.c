@@ -9,16 +9,16 @@
  */
 void q_sort(int *arr, int start, int end, int size)
 {
-	ssize_t i  j;
+	ssize_t i, j;
 	int tmp, p;
 
 	if (start < end)
 	{
-		p = array[end];
+		p = arr[end];
 		j = start - 1;
 		for (i = start; i < end; i++)
 		{
-			if (array[i] < p)
+			if (arr[i] < p)
 			{
 				j++;
 				if (i != j)
@@ -33,7 +33,7 @@ void q_sort(int *arr, int start, int end, int size)
 		if (arr[end] < arr[j + 1])
 		{
 			tmp = arr[j + 1];
-			arr[j + 1] = array[end];
+			arr[j + 1] = arr[end];
 			arr[end] = tmp;
 			print_array(arr, size);
 		}
