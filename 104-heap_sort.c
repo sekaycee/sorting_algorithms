@@ -3,48 +3,48 @@
 /**
  * swap_nums - swap numbers
  * @arr: input array
- * @a: first index
- * @b: second index
+ * @root: the root of the heap
+ * @end: the last index of the heap
+ * @size: size of the array
  */
-void swap_nums(int *arr, int a, int b)
+void swap_nums(int *arr, size_t root, size_t end, size_t size)
 {
-	arr[a] = arr[a] + arr[b];
-	arr[b] = arr[a] - arr[b];
-	arr[a] = arr[a] - arr[b];
+	size_t left, right, swap;
+	int tmp;
+
+	while ((left = (2 * root) + 1) <= end)
+	{
+		swap = root;
+		right = left + 1;
+		if (arr[swap] < arr[left])
+			swap = left;
+		if (right <= end && arr[swap] < arr[right])
+			swap = right;
+		if (swap == root)
+			return;
+
+		tmp = arr[root];
+		arr[root] = arr[swap];
+		arr[swap] = tmp;
+		print_array(arr, size);
+		root = swap;
+	}
 }
 
 /**
  * make_heap - build the max heap tree recursively
  * @arr: input array
- * @i: index number
  * @size: size of the array
- * @end: end of the array
  */
-void make_heap(int *arr, int i, size_t size, int end)
+void make_heap(int *arr, size_t size)
 {
-	int big;
-	int j;
+	size_t head;
 
-	j = i * 2;
-	if (j + 2 < end)
+	for (head = ((size - 1) - 1) / 2; 1; head--)
 	{
-		make_heap(arr, j + 1, size, end);
-		make_heap(arr, j + 2, size, end);
-	}
-
-	if (j + 1 >= end)
-		return;
-
-	if (j + 2 < end)
-		big = (arr[j + 1] > arr[j + 2]) ? (j + 1) : (j + 2);
-	else
-		big = j + 1;
-
-	if (arr[i] < arr[big])
-	{
-		swap_nums(arr, i, big);
-		print_array(arr, size);
-		make_heap(arr, big, size, end);
+		swap_nums(arr, head, size - 1, size);
+		if (head == 0)
+			break;
 	}
 }
 
@@ -56,22 +56,21 @@ void make_heap(int *arr, int i, size_t size, int end)
  */
 void heap_sort(int *array, size_t size)
 {
-	int i;
-	size_t end;
+	size_t i;
+	int tmp;
 
-	if (!array || size == 0)
+	if (!array || size < 2)
 		return;
 
-	i = 0;
-	end = size;
-	while (end > 1)
+	make_heap(array, size);
+	i = size - 1;
+	while (i > 0)
 	{
-		make_heap(array, i, size, end);
-		if (array[i] >= array[end - 1])
-		{
-			swap_nums(array, i, end - 1);
-			print_array(array, size);
-		}
-		end--;
+		tmp = array[i];
+		array[i] = array[0];
+		array[0] = tmp;
+		print_array(array, size);
+		i--;
+		swap_nums(array, 0, i, size);
 	}
 }
