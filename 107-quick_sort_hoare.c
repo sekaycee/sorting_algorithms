@@ -2,7 +2,7 @@
 
 /**
  * qsort_h - recursive helper function for quick_sort_hoare
- * @array: array to sort
+ * @arr: array to sort
  * @start: lowest index of the partition to sort
  * @end: highest index of the partition to sort
  * @size: size of the array

@@ -2,12 +2,12 @@
 
 /**
  * q_sort - helper function for the quick_sort function
- * @a: input arrray
- * @start: index for the first element
- * @end: index for the last element
+ * @arr: input arrray
+ * @start: index of the first element
+ * @end: index of the last element
  * @size: size of the array
  */
-void q_sort(int *a, int start, int end, int size)
+void q_sort(int *arr, int start, int end, int size)
 {
 	ssize_t i  j;
 	int tmp, p;
@@ -18,27 +18,27 @@ void q_sort(int *a, int start, int end, int size)
 		j = start;
 		for (i = start; i < end; i++)
 		{
-			if (a[i] < a[p])
+			if (arr[i] < arr[p])
 			{
 				if (i != j)
 				{
-					tmp = a[i];
-					a[i] = a[j];
-					a[j] = tmp;
-					print_array(a, size);
+					tmp = arr[i];
+					arr[i] = arr[j];
+					arr[j] = tmp;
+					print_array(arr, size);
 				}
 				j++;
 			}
 		}
-		if (j != p && a[j] != a[p])
+		if (j != p && arr[j] != arr[p])
 		{
-			tmp = a[j];
-			a[j] = a[p];
-			a[p] = tmp;
-			print_array(a, size);
+			tmp = arr[j];
+			arr[j] = arr[p];
+			arr[p] = tmp;
+			print_array(arr, size);
 		}
-		q_sort(a, start, j - 1, size);
-		q_sort(a, j + 1, end, size);
+		q_sort(arr, start, j - 1, size);
+		q_sort(arr, j + 1, end, size);
 	}
 }
 
