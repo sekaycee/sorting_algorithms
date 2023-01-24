@@ -1,7 +1,8 @@
 #include "sort.h"
 
 /**
- * swap - swap a node with the next node in the list
+ * swap - Swap a node with the next node in the list
+ *
  * @list: double pointer to the beginning of the list
  * @node: node to swap
  */
@@ -21,8 +22,9 @@ void swap(listint_t **list, listint_t *node)
 }
 
 /**
- * cocktail_sort_list - sort a DL list of integers in ascending
- * order using the Cocktail shaker sort algorithm
+ * cocktail_sort_list - Sort a DL list of integers in ascending order
+ *                      using the Cocktail shaker sort algorithm
+ *
  * @list: double pointer to the head of the doubly linked list
  */
 void cocktail_sort_list(listint_t **list)
