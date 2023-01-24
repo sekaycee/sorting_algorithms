@@ -84,9 +84,9 @@ void msort(int *array, int start, int end, int *b)
 }
 
 /**
- * merge_sort - Sort an array of integers in ascending order
+ * merge_sort - Sort an array of integers in ascending
+ *              order using the Merge sort algorithm
  *
- * using the Merge sort algorithm
  * @array: array
  * @size: size
  */
