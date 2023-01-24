@@ -2,6 +2,7 @@
 
 /**
  * qsort_h - recursive helper function for quick_sort_hoare
+ *
  * @arr: array to sort
  * @start: lowest index of the partition to sort
  * @end: highest index of the partition to sort
@@ -43,7 +44,8 @@ void qsort_h(int *arr, ssize_t start, ssize_t end, size_t size)
 
 /**
  * quick_sort_hoare - sort an array of integers in ascending order
- * using the Quick sort hoare algorithm
+ *                    using the Quick sort hoare algorithm
+ *
  * @array: The array to sort
  * @size: The size of the array
  */
