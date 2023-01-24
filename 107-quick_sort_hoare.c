@@ -1,7 +1,7 @@
 #include "sort.h"
 
 /**
- * quicksort - recursive helper function for quick_sort_hoare
+ * qsort_h - recursive helper function for quick_sort_hoare
  * @array: array to sort
  * @start: lowest index of the partition to sort
  * @end: highest index of the partition to sort
@@ -10,32 +10,35 @@
 void qsort_h(int *arr, ssize_t start, ssize_t end, size_t size)
 {
 	int tmp, p;
+	ssize_t i, j;
 
 	if (start < end)
 	{
-		p = arr[end];
-		while (start <= end)
+		i = start;
+		j = end;
+		p = arr[j];
+		while (i <= j)
 		{
-			while (arr[start] < p)
-				start++;
-			while (arr[end] > p)
-				end--;
-			if (start <= end)
+			while (arr[i] < p)
+				i++;
+			while (arr[j] > p)
+				j--;
+			if (i <= j)
 			{
-				if (start != end)
+				if (i != j)
 				{
-					tmp = arr[start];
-					arr[start] = arr[end];
-					arr[end] = tmp;
+					tmp = arr[i];
+					arr[i] = arr[j];
+					arr[j] = tmp;
 					print_array(arr, size);
 				}
-				start++;
-				end--;
+				i++;
+				j--;
 			}
 		}
+		qsort_h(arr, start, j, size);
+		qsort_h(arr, j + 1, end, size);
 	}
-	qsort_h(arr, start, p, size);
-	qsort_h(arr, p + 1, end, size);
 }
 
 /**
