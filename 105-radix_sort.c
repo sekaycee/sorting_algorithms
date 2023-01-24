@@ -2,7 +2,8 @@
 
 /**
  * radix_sort - sort an array of integers in ascending
- * order using the Radix sort algorithm
+ *              order using the Radix sort algorithm
+ *
  * @array: input array
  * @size: size of the array
  */
