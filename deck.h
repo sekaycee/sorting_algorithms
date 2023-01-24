@@ -6,7 +6,7 @@
 #include <stdlib.h>
 
 /**
- * enum kind_e - suit of the card
+ * enum kind_e - Suit of the card
  *
  * @SPADE: 0, or spades
  * @HEART: 1, or hearts
@@ -22,7 +22,7 @@ typedef enum kind_e
 } kind_t;
 
 /**
- * struct card_s - card representation
+ * struct card_s - Card representation
  *
  * @value: Value of the card
  * From "Ace" to "King"
