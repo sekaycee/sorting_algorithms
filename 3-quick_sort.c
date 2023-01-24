@@ -1,12 +1,14 @@
 #include "sort.h"
 
 /**
- * q_sort - helper function for the quick_sort function
+ * q_sort - Helper function for the quick_sort function
+ *
  * @arr: input arrray
  * @start: index of the first element
  * @end: index of the last element
  * @size: size of the array
  */
+
 void q_sort(int *arr, int start, int end, int size)
 {
 	ssize_t i, j;
@@ -43,8 +45,10 @@ void q_sort(int *arr, int start, int end, int size)
 }
 
 /**
- * quick_sort - sort an array of integers in ascending order
- * using the quick sort algorithm and lomuto partition scheme
+ * quick_sort - Sort an array of integers in ascending order
+ *              using the quick sort algorithm and lomuto
+ *              partition scheme
+ *
  * @array: input arrray
  * @size: size of the array
  */
@@ -52,5 +56,6 @@ void quick_sort(int *array, size_t size)
 {
 	if (!array || size < 2)
 		return;
+
 	q_sort(array, 0, size - 1, size);
 }
