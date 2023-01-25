@@ -1,14 +1,14 @@
 #include "sort.h"
 
 /**
- * swap_nums - Swap numbers
+ * sift_down - Swap numbers
  *
  * @arr: input array
  * @root: the root of the heap
  * @end: the last index of the heap
  * @size: size of the array
  */
-void swap_nums(int *arr, size_t root, size_t end, size_t size)
+void sift_down(int *arr, size_t root, size_t end, size_t size)
 {
 	size_t left, right, swap;
 	int tmp;
@@ -33,25 +33,25 @@ void swap_nums(int *arr, size_t root, size_t end, size_t size)
 }
 
 /**
- * make_heap - Build the max heap tree recursively
+ * heapify - Build the max heap tree
  *
  * @arr: input array
  * @size: size of the array
  */
-void make_heap(int *arr, size_t size)
+void heapify(int *arr, size_t size)
 {
 	size_t head;
 
 	for (head = ((size - 1) - 1) / 2; 1; head--)
 	{
-		swap_nums(arr, head, size - 1, size);
+		sift_down(arr, head, size - 1, size);
 		if (head == 0)
 			break;
 	}
 }
 
 /**
- * heap_sort - Sorts an array of integers in ascending
+ * heap_sort - Sort an array of integers in ascending
  *             order using the Heap sort algorithm
  *
  * @array: input array
@@ -65,7 +65,7 @@ void heap_sort(int *array, size_t size)
 	if (!array || size < 2)
 		return;
 
-	make_heap(array, size);
+	heapify(array, size);
 	i = size - 1;
 	while (i > 0)
 	{
@@ -74,6 +74,6 @@ void heap_sort(int *array, size_t size)
 		array[0] = tmp;
 		print_array(array, size);
 		i--;
-		swap_nums(array, 0, i, size);
+		sift_down(array, 0, i, size);
 	}
 }
